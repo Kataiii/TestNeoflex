@@ -1,0 +1,39 @@
+.card_wrap{
+    width: 306px;
+    height: 353px;
+    border-radius: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px 0px #0000001A;
+    padding:27px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card_image{
+    display: block;
+    margin: 0 auto;
+}
+
+.card_wrapContent{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.card_wrapTitle{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card_priceHeight{
+    height: 36px;
+}
+
+.card_title{
+    font-family: "Montserrat";
+    font-size: 17px;
+    font-weight: 600;
+    color: #1C1C27;
+    margin: 0;
+}
