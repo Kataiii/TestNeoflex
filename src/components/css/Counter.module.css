@@ -1,0 +1,24 @@
+.counter_wrap{
+    width: 116px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.counter_image{
+    background: #FFCE7F;
+    width: 14px;
+    height: 14px;
+    padding: 8px;
+    margin: 0;
+    border-radius: 20px;
+    
+}
+
+.counter_content{
+    font-family: "Montserrat";
+    font-size: 17px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0;
+}
