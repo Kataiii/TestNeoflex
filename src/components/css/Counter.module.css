@@ -12,7 +12,15 @@
     padding: 8px;
     margin: 0;
     border-radius: 20px;
-    
+    cursor: pointer;
+}
+
+.counter_image:hover{
+    background: #ebbd75;
+}
+
+.counter_image:active{
+    background: #dab06c;
 }
 
 .counter_content{
@@ -21,4 +29,16 @@
     font-weight: 600;
     color: #000000;
     margin: 0;
+}
+
+.counter_disable{
+    background: #ffce7f80;
+}
+
+.counter_disable:hover{
+    background: #ffce7f80;
+}
+
+.counter_disable:active{
+    background: #ffce7f80;
 }

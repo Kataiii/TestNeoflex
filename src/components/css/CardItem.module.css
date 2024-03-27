@@ -10,6 +10,10 @@
     justify-content: space-between;
 }
 
+.card_wrap:hover{
+    box-shadow: 0px 0px 20px 0px #000000ab;
+}
+
 .card_image{
     display: block;
     margin: 0 auto;
@@ -24,6 +28,8 @@
 .card_wrapTitle{
     display: flex;
     justify-content: space-between;
+    height: 30px;
+    align-items: center;
 }
 
 .card_priceHeight{

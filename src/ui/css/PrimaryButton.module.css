@@ -8,6 +8,7 @@
 }
 
 .button{
+    cursor: pointer;
     font-family: "Montserrat";
     font-size: 17px;
     font-weight: 600;
@@ -19,4 +20,12 @@
     border: none;
     width: 100%;
     padding: 22px 0;
+}
+
+.button:hover{
+    background: #1a1a1a;
+}
+
+.button:active{
+    background: #2e2e2e;
 }
