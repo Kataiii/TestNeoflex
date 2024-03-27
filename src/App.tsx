@@ -8,7 +8,9 @@ const App: React.FC = () => {
   return (
     <div className={styles.App}>
       <Header/>
-      <Outlet />
+      <div>
+        <Outlet />
+      </div>
       <Footer/>
     </div>
   );

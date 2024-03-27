@@ -1,0 +1,63 @@
+.cardCart_wrap{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.cardCart_delete{
+    position: absolute;
+    right: 0;
+}
+
+.cardCart_image{
+    max-width: 146px;
+}   
+
+.cardCart_title{
+    font-family: "Montserrat";
+    font-size: 17px;
+    font-weight: 500;
+    color: #1C1C27;
+    margin: 0;
+}
+
+.cardCart_content{
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.cardCart_primaryColor{
+    color: #1C1C27;
+}
+
+.cardCart_secondaryColor{
+    color: #AAAAAA;
+}
+
+.cardCart_wrapInfo{
+    display: flex;
+    gap: 23px;
+    align-items: center;
+}
+
+.cardCart_wrapTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.cardCart_wrapCounter{
+    width: 146px;
+    display: flex;
+    justify-content: center;
+}
+
+.cardCart_wrapCost{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

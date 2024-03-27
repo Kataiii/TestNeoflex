@@ -1,0 +1,18 @@
+.page_title{
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-weight: 600;
+    color: #1C1C27;
+}
+
+.cart_wrap{
+    display: grid;
+    grid-template-columns: 1fr 348px;
+    gap: 127px;
+}
+
+.catalogPage_wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}

@@ -7,6 +7,16 @@ export interface Item{
     cell: number;
 }
 
+export interface ItemCart{
+    img: string;
+    title: string;
+    price: number;
+    rate: number;
+    category_id: number;
+    cell: number;
+    count:number;
+}
+
 export const categories: string[] = [
     "Наушники",
     "Беспроводные наушники"

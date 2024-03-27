@@ -1,0 +1,23 @@
+.lang_wrap{
+    width: 112px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lang_content{
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 500;
+    color: #101010;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.lang_activeContent{
+    color: #FFA542;
+    font-weight: 700;
+}

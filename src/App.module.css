@@ -1,7 +1,8 @@
 .App{
     width: 80%;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 60px 1fr 142px;
     gap: 28px;
+    min-height: 100vh;
 }
