@@ -1,8 +1,17 @@
 .link_content{
+    display: block;
     font-family: "Montserrat";
     font-size: 17px;
     font-weight: 400;
     color: #000000;
     cursor: pointer;
     margin: 0;
+}
+
+.link_wrapContent :hover{
+    font-weight: 500;
+}
+
+.link_wrapContent :active{
+    color: #525252;
 }

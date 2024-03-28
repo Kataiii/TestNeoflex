@@ -2,9 +2,20 @@
     font-family: "Montserrat";
     font-size: 17px;
     font-weight: 600;
-    background: #000000;
+    color: #000000;
     border: none;
     background-color: transparent;
+    cursor: pointer;
+}
+
+.primary_button:hover{
+    color: #333333;
+    font-weight: 700;
+}
+
+.primary_button:active{
+    color: #535353;
+    font-weight: 700;
 }
 
 .button{
@@ -28,4 +39,14 @@
 
 .button:active{
     background: #2e2e2e;
+}
+
+.iconButton_image{
+    width: 31px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.iconButton_image:hover{
+    opacity: 1;
 }

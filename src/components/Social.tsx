@@ -1,29 +1,32 @@
 import { useMemo } from "react";
+import { redirect, useNavigate } from "react-router-dom";
 import IconButton from "../ui/IconButton";
 import styles from "./css/Social.module.css";
 
 interface SocialItem{
     image: string;
     alt: string;
-    onClick: () => void;
+    link:string;
 }
 
 const Social: React.FC = () => {
+    const navigate = useNavigate();
+
     const socialItems = useMemo<SocialItem[]>(() => [
         {
             image: "vk.svg",
             alt: "vk",
-            onClick: () => console.log("vk")
+            link: "https://vk.com/"
         },
         {
             image: "telegram.svg",
             alt: "telegram",
-            onClick: () => console.log("telegram")
+            link: "https://t.me/telegram"
         },
         {
             image: "whatsapp.svg",
             alt: "whatsapp",
-            onClick: () => console.log("whatsapp")
+            link: "https://www.whatsapp.com/"
         }
     ],[]);
 
@@ -32,7 +35,7 @@ const Social: React.FC = () => {
             <>
             {
                 socialItems.map((item, index) => {
-                    return <IconButton key={index} image={item.image} onClick={item.onClick} alt={item.alt}/>
+                    return <IconButton key={index} image={item.image} link={item.link} alt={item.alt}/>
                 })
             }
             </>

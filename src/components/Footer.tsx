@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         <div className={styles.footer_wrap}>
             <Logo/>
             <div className={[styles.footer_wrapLinks, styles.footer_gapLinks].join(" ")}>
-                <Link content="Избранное" onClick={() => console.log("Избранное")}/>
+                <Link content="Избранное" onClick={() => navigate('/favourites')}/>
                 <Link content={"Корзина"} onClick={() => navigate('/shop_cart')}/>
                 <Link content={"Контакты"} onClick={() => console.log("Контакты")}/>
             </div>

@@ -4,23 +4,27 @@ import './index.css';
 import { RouterProvider } from 'react-router-dom';
 import router from './routing/router';
 import CartStore from './store/cartStore';
+import CatalogStore from './store/catalogStore';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
 export const cartStore = new CartStore();
+export const catalogStore = new CatalogStore();
 
 interface State {
-  cartStore: CartStore
+  cartStore: CartStore,
+  catalogStore: CatalogStore
 }
 
 export const Context = createContext<State>({
-  cartStore
+  cartStore,
+  catalogStore
 });
 
 root.render(
-  <Context.Provider value={{cartStore}}>
+  <Context.Provider value={{cartStore, catalogStore}}>
     <RouterProvider router={router}></RouterProvider>
   </Context.Provider>
 );

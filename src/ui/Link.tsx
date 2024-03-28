@@ -8,7 +8,10 @@ interface LinkProps{
 
 const Link:React.FC<LinkProps> = ({content, onClick}) => {
     return(
-        <p className={styles.link_content} onClick={onClick}>{content}</p>
+        <div className={styles.link_wrapContent}>
+            <p className={styles.link_content} onClick={onClick}>{content}</p>
+        </div>
+       
     )
 }
 

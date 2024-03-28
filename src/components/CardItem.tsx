@@ -2,19 +2,21 @@ import { runInAction } from "mobx";
 import { observer } from "mobx-react-lite";
 import { useContext, useState } from "react";
 import { Context } from "..";
-import { Item, ItemCart } from "../assets/entities/items";
+import { Item, ItemCart, items } from "../assets/entities/items";
 import PrimaryButton from "../ui/PrimaryButton";
 import Counter from "./Counter";
 import styles from "./css/CardItem.module.css";
 import PriceLabel from "./PriceLabel";
 import Rating from "./Rating";
+import Favourite from "../assets/icons/favorites.svg";
+import IsFavourite from "../assets/icons/isFavourites.svg";
 
 interface CardItemProps {
     item: Item;
 }
 
 const CardItem: React.FC<CardItemProps> = observer(({ item }) => {
-    const { cartStore } = useContext(Context);
+    const { cartStore, catalogStore } = useContext(Context);
     const [count, setCount] = useState<number>(cartStore.getItems().find(el => el.id === item.id)?.count ?? 0);
 
     const decreaseClick = () => {
@@ -61,8 +63,22 @@ const CardItem: React.FC<CardItemProps> = observer(({ item }) => {
         cartStore.setItems([...cartStore.getItems(), itemCart]);
     }
 
+    const favouriteHandler = () => {
+        runInAction(() => {
+            let items = catalogStore.getItems();
+            let element: Item = items.find(el => el.id === item.id) ?? item;
+            element.isFavourite = !element.isFavourite;
+            items = items.map(el => {
+                if(el.id === item.id) el = element;
+                return el;
+            })
+            catalogStore.setItems(items);
+        })
+    }
+
     return (
         <div className={styles.card_wrap}>
+            <img className={styles.card_imageFavorite} src={item.isFavourite? IsFavourite : Favourite} alt="добавить в избранное" onClick={favouriteHandler}/>
             <img className={styles.card_image} src={require(`../assets/images/${item.img}`)} alt={item.title} />
             <div className={styles.card_wrapContent}>
                 <div className={[styles.card_wrapTitle, styles.card_priceHeight].join(" ")}>
