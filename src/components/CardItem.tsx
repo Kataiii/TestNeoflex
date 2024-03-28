@@ -7,9 +7,10 @@ import PrimaryButton from "../ui/PrimaryButton";
 import Counter from "./Counter";
 import styles from "./css/CardItem.module.css";
 import PriceLabel from "./PriceLabel";
-import Rating from "./Rating";
-import Favourite from "../assets/icons/favorites.svg";
-import IsFavourite from "../assets/icons/isFavourites.svg";
+import Rating from "./Rating"
+import { useLocation, useNavigate } from "react-router-dom";
+import { ITEM_DETAILS } from "../utils/constants";
+import Favourite from "./Favourite";
 
 interface CardItemProps {
     item: Item;
@@ -17,6 +18,8 @@ interface CardItemProps {
 
 const CardItem: React.FC<CardItemProps> = observer(({ item }) => {
     const { cartStore, catalogStore } = useContext(Context);
+    const navigate = useNavigate();
+    const location = useLocation();
     const [count, setCount] = useState<number>(cartStore.getItems().find(el => el.id === item.id)?.count ?? 0);
 
     const decreaseClick = () => {
@@ -63,23 +66,16 @@ const CardItem: React.FC<CardItemProps> = observer(({ item }) => {
         cartStore.setItems([...cartStore.getItems(), itemCart]);
     }
 
-    const favouriteHandler = () => {
-        runInAction(() => {
-            let items = catalogStore.getItems();
-            let element: Item = items.find(el => el.id === item.id) ?? item;
-            element.isFavourite = !element.isFavourite;
-            items = items.map(el => {
-                if(el.id === item.id) el = element;
-                return el;
-            })
-            catalogStore.setItems(items);
-        })
+    const modalOpenHandler = () => {
+        navigate(`${ITEM_DETAILS}/${item.id}`, {state: { previousLocation: location }});
     }
 
     return (
         <div className={styles.card_wrap}>
-            <img className={styles.card_imageFavorite} src={item.isFavourite? IsFavourite : Favourite} alt="добавить в избранное" onClick={favouriteHandler}/>
-            <img className={styles.card_image} src={require(`../assets/images/${item.img}`)} alt={item.title} />
+            <div className={styles.card_imageFavorite}>
+                <Favourite isFavourite={item.isFavourite} item={item}/>
+            </div>
+            <img className={styles.card_image} src={require(`../assets/images/${item.img}`)} alt={item.title} onClick={modalOpenHandler}/>
             <div className={styles.card_wrapContent}>
                 <div className={[styles.card_wrapTitle, styles.card_priceHeight].join(" ")}>
                     <p className={styles.card_title}>{item.title}</p>

@@ -7,6 +7,7 @@ import { observer } from "mobx-react-lite";
 import { useContext } from "react";
 import { Context } from "..";
 import Counter from "../utils/counter";
+import { CART_PATH, FAVOURITES_PATH } from "../utils/constants";
 
 const Header: React.FC = observer(() => {
     const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Header: React.FC = observer(() => {
         <div className={styles.header_wrap}>
             <Logo/>
             <div className={styles.header_wrapIcons}>
-                <div className={styles.header_wrapIcon} onClick={() => navigate("/favourites")}>
+                <div className={styles.header_wrapIcon} onClick={() => navigate(FAVOURITES_PATH)}>
                     <img src={Favorites} alt="favoriets"/>
                     {
                         catalogStore.getItems().filter(item => item.isFavourite).length === 0
@@ -24,7 +25,7 @@ const Header: React.FC = observer(() => {
                         : <p className={styles.header_iconContent}>{catalogStore.getItems().filter(item => item.isFavourite).length}</p>
                     }
                 </div>
-                <div className={styles.header_wrapIcon} onClick={() => navigate("/shop_cart")}>
+                <div className={styles.header_wrapIcon} onClick={() => navigate(CART_PATH)}>
                     <img src={Cart} alt="cart"/>
                     {
                         cartStore.getItems().length === 0

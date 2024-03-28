@@ -8,6 +8,7 @@
 .cardCart_delete{
     position: absolute;
     right: 0;
+    cursor: pointer;
 }
 
 .cardCart_image{

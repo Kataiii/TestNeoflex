@@ -5,6 +5,7 @@ import { Context } from "..";
 import { Item, items } from "../assets/entities/items";
 import Category from "../modules/Category";
 import ModalInfo from "../ui/ModalInfo";
+import { HOME_PATH } from "../utils/constants";
 import Filter from "../utils/filter";
 import styles from "./css/Page.module.css";
 
@@ -26,7 +27,7 @@ const FavouritesPage: React.FC = observer(() => {
                         <ModalInfo title={"Нет избранных товаров"} 
                                     content={"Загляните на главную, чтобы добавить товар в избранное"} 
                                     buttonContent={"Перейти на главную"} 
-                                    buttonClick={() => navigate("/")}/>
+                                    buttonClick={() => navigate(HOME_PATH)}/>
                     : null
                 }
             </div>
