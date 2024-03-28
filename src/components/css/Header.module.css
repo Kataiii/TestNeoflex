@@ -6,14 +6,29 @@
 }
 
 .header_wrapIcons{
-    width: 90px;
+    width: 100px;
     display: flex;
     justify-content: space-between;
 }
 
 .header_wrapIcon{
     position: relative;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.header_wrapIcon:hover{
+    background-color: #cccaca;
+}
+
+.header_wrapIcon:active{
+    background-color: #b9b9b9;
+}
+
 
 .header_iconContent{
     width: 18px;
@@ -26,7 +41,8 @@
     background: #FFA542;
     border-radius: 20px;
     position: absolute;
-    top: -10px;
-    right: -10px;
+    top: 0px;
+    right: 0px;
     margin: 0;
+    z-index: 10;
 }

@@ -30,29 +30,3 @@
     background-color: #AAAAAA;
     border-radius: 100px;
 }
-
-.cartList_title{
-    font-family: "Montserrat";
-    font-size: 17px;
-    font-weight: 600;
-    color: #1C1C27;
-    margin: 0;
-}
-
-.cartList_modalWrap{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.cartList_content{
-    font-family: "Montserrat";
-    font-size: 15px;
-    font-weight: 500;
-    color: #AAAAAA;
-}
-
-.cartList_wrapButton{
-    width: 30%;
-}

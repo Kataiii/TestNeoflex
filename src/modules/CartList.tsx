@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import { ItemCart } from "../assets/entities/items";
 import CardCartItem from "../components/CardCartItem";
 import Button from "../ui/Button";
+import ModalInfo from "../ui/ModalInfo";
 import styles from "./css/CartList.module.css";
 
 interface CartListProps{
@@ -17,13 +18,10 @@ const CartList: React.FC<CartListProps> = ({items}) => {
             {
                 items.length === 0
                 ? 
-                    <div className={styles.cartList_modalWrap}>
-                        <p className={styles.cartList_title}>Корзина пуста</p>
-                        <p className={styles.cartList_content}>Загляните на главную, чтобы выбрать товары</p>
-                        <div className={styles.cartList_wrapButton}>
-                            <Button content={"Перейти на главную"} onCLick={() => navigate('/')}/>
-                        </div>
-                    </div>
+                    <ModalInfo title={"Корзина пуста"} 
+                                content={"Загляните на главную, чтобы выбрать товары"} 
+                                buttonContent={"Перейти на главную"} 
+                                buttonClick={() => navigate('/')}/>
                 : items.map((item, index) => {
                     return <CardCartItem key={index} item={item}/>
                 })

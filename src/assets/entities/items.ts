@@ -7,6 +7,7 @@ export interface Item{
     category_id: number;
     cell: number;
     all_count: number;
+    isFavourite: boolean;
 }
 
 export interface ItemCart{
@@ -34,7 +35,8 @@ export const items: Item[] = [
         rate: 4.7,
         category_id: 0,
         cell: 0.829,
-        all_count: 10
+        all_count: 10,
+        isFavourite: false
     },
     {
         id: 2,
@@ -44,7 +46,8 @@ export const items: Item[] = [
         rate: 4.5,
         category_id: 0,
         cell: 0,
-        all_count: 12
+        all_count: 12,
+        isFavourite: false
     },
     {
         id: 3,
@@ -54,7 +57,8 @@ export const items: Item[] = [
         rate: 4.5,
         category_id: 0,
         cell: 0,
-        all_count:8
+        all_count:8,
+        isFavourite: false
     },
     {
         id: 4,
@@ -64,7 +68,8 @@ export const items: Item[] = [
         rate: 4.7,
         category_id: 0,
         cell: 0,
-        all_count:10
+        all_count:10,
+        isFavourite: false
     },
     {
         id: 5,
@@ -74,7 +79,8 @@ export const items: Item[] = [
         rate: 4.5,
         category_id: 0,
         cell: 0,
-        all_count:5
+        all_count:5,
+        isFavourite: false
     },
     {
         id: 6,
@@ -84,7 +90,8 @@ export const items: Item[] = [
         rate: 4.5,
         category_id: 0,
         cell: 0,
-        all_count: 8
+        all_count: 8,
+        isFavourite: false
     },
     {
         id: 7,
@@ -94,7 +101,8 @@ export const items: Item[] = [
         rate: 4.7,
         category_id: 1,
         cell: 0,
-        all_count: 7
+        all_count: 7,
+        isFavourite: false
     },
     {
         id: 8,
@@ -104,7 +112,8 @@ export const items: Item[] = [
         rate: 4.7,
         category_id: 1,
         cell: 0,
-        all_count: 10
+        all_count: 10,
+        isFavourite: false
     },
     {
         id: 9,
@@ -114,7 +123,8 @@ export const items: Item[] = [
         rate: 4.7,
         category_id: 1,
         cell: 0,
-        all_count: 8
+        all_count: 8,
+        isFavourite: false
     }
 ]
 
