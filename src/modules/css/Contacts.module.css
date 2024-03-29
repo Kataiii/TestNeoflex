@@ -1,0 +1,25 @@
+.contacts_wrap{
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contacts_content{
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 600;
+    color: #AAAAAA;
+    margin: 0;
+}
+
+.contacts_a{
+    text-decoration: none;
+    color: #AAAAAA;
+}
+
+.contacts_wrapContent{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

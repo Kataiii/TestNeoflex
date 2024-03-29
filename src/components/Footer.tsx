@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Link from "../ui/Link";
 import Logo from "../ui/Logo";
-import { CART_PATH, FAVOURITES_PATH } from "../utils/constants";
+import { CART_PATH, CONTACTS_PATH, FAVOURITES_PATH } from "../utils/constants";
 import styles from "./css/Footer.module.css";
 import Lang from "./Lang";
 import Social from "./Social";
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
             <div className={[styles.footer_wrapLinks, styles.footer_gapLinks].join(" ")}>
                 <Link content="Избранное" onClick={() => navigate(FAVOURITES_PATH)}/>
                 <Link content={"Корзина"} onClick={() => navigate(CART_PATH)}/>
-                <Link content={"Контакты"} onClick={() => console.log("Контакты")}/>
+                <Link content={"Контакты"} onClick={() => navigate(CONTACTS_PATH)}/>
             </div>
             <div className={[styles.footer_wrapLinks, styles.footer_gapLang].join(" ")}>
                 <Link content={"Условия сервиса"} onClick={() => console.log("Условия сервиса")}/>
