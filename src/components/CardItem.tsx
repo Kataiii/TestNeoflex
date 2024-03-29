@@ -1,6 +1,6 @@
 import { runInAction } from "mobx";
 import { observer } from "mobx-react-lite";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "..";
 import { Item, ItemCart, items } from "../assets/entities/items";
 import PrimaryButton from "../ui/PrimaryButton";
@@ -11,6 +11,7 @@ import Rating from "./Rating"
 import { useLocation, useNavigate } from "react-router-dom";
 import { ITEM_DETAILS } from "../utils/constants";
 import Favourite from "./Favourite";
+import Info from "../assets/icons/info.svg";
 
 interface CardItemProps {
     item: Item;
@@ -21,6 +22,10 @@ const CardItem: React.FC<CardItemProps> = observer(({ item }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const [count, setCount] = useState<number>(cartStore.getItems().find(el => el.id === item.id)?.count ?? 0);
+
+    useEffect(() => {
+        setCount(cartStore.getItems().find(el => el.id === item.id)?.count ?? count);
+    }, [cartStore.getItems()]);
 
     const decreaseClick = () => {
         runInAction(() => {
@@ -74,6 +79,7 @@ const CardItem: React.FC<CardItemProps> = observer(({ item }) => {
         <div className={styles.card_wrap}>
             <div className={styles.card_imageFavorite}>
                 <Favourite isFavourite={item.isFavourite} item={item}/>
+                <img src={Info} alt="информация" onClick={modalOpenHandler}/>
             </div>
             <img className={styles.card_image} src={require(`../assets/images/${item.img}`)} alt={item.title} onClick={modalOpenHandler}/>
             <div className={styles.card_wrapContent}>

@@ -1,4 +1,4 @@
-import { categories, Item } from "../assets/entities/items";
+import { categories, Item, ItemCart } from "../assets/entities/items";
 import Button from "../ui/Button";
 import PrimaryButton from "../ui/PrimaryButton";
 import PriceLabel from "./PriceLabel";
@@ -6,16 +6,18 @@ import Rating from "./Rating";
 import { useNavigate, useParams } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import { Context } from "..";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import styles from "./css/ModalCartItem.module.css";
 import Favourite from "./Favourite";
 import Close from "../assets/icons/close.svg";
 import { fn } from "../utils/constants";
 import { useOutsideClick } from "../utils/hooks/UseOutsideClick";
+import { CART_PATH } from "../utils/constants";
+import { runInAction } from "mobx";
 
 
 const ModalCartItem: React.FC = observer(() => {
-    const {catalogStore} = useContext(Context);
+    const {catalogStore, cartStore} = useContext(Context);
     const { id } = useParams();
     const navigate = useNavigate();
     const ref = useRef(null);
@@ -26,6 +28,8 @@ const ModalCartItem: React.FC = observer(() => {
         item = catalogStore.getItems().find(el => el.id === Number(id));
     }
 
+    const [inCart, setInCart] = useState<boolean>(cartStore.getItems().find(el => el.id === Number(id)) !== undefined ? true : false);
+
     const closeHandler = () => {
         navigate(-1);
         window.removeEventListener("wheel", fn);
@@ -33,6 +37,50 @@ const ModalCartItem: React.FC = observer(() => {
     }
 
     useOutsideClick(ref, closeHandler);
+
+    const addCartHandler = () => {
+        runInAction(() => {
+            if(inCart)
+            {
+                navigate(CART_PATH);
+            }
+            else 
+            {
+                const itemCart: ItemCart = {
+                    id: item?.id ?? 0,
+                    img: item?.img ?? "",
+                    title: item?.title ?? "",
+                    price: item?.price ?? 0,
+                    cell: item?.cell ?? 0,
+                    count: 1
+                }
+                setInCart(inCart => !inCart);
+                cartStore.setItems([...cartStore.getItems(), itemCart]);
+                closeHandler();
+            }
+        })
+    }
+
+    const buyNowHandler = () => {
+        if(inCart)
+        {
+            navigate(CART_PATH);
+        }
+        else 
+        {
+            const itemCart: ItemCart = {
+                id: item?.id ?? 0,
+                img: item?.img ?? "",
+                title: item?.title ?? "",
+                price: item?.price ?? 0,
+                cell: item?.cell ?? 0,
+                count: 1
+            }
+            setInCart(true);
+            cartStore.setItems([...cartStore.getItems(), itemCart]);
+            navigate(CART_PATH);
+        }
+    }
 
     return(
         <div ref={ref} className={styles.modalCart_wrap}>
@@ -52,8 +100,8 @@ const ModalCartItem: React.FC = observer(() => {
                 
                 <div className={styles.modalCart_wrapButtons}>
                     <div className={styles.modalCart_wrapBtns}>
-                        <Button content={"Добавить в корзину"} onCLick={() => console.log("Добавить в корзину")}/>
-                        <PrimaryButton content={"Купить сейчас"} onClick={() => console.log("Купить сейчас")}/>
+                        <Button content={ inCart ? "Перейти в корзину" : "Добавить в корзину"} onCLick={addCartHandler}/>
+                        <PrimaryButton content={inCart ? "Перейти к оплате" : "Купить сейчас"} onClick={buyNowHandler}/>
                     </div>
                     <div className={styles.modalCart_wrapImage}>
                         <Favourite isFavourite={item?.isFavourite ?? false} item={item ?? catalogStore.getItems()[0]}/>
