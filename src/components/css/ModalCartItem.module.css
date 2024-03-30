@@ -70,3 +70,51 @@
     top: 20px;
     cursor: pointer;
 }
+
+@media all and (max-width:1390px){
+    .modalCart_wrapBtns{
+        width: 100%;
+    }
+
+    .modalCart_wrapImage{
+        position: absolute;
+        top: 0;
+        left: 221px;
+    }
+}
+
+@media all and (max-width:1230px){
+    .modalCart_wrap{
+        width: 70%;
+    }
+
+    .modalCart_wrapBtns{
+        width: 100%;
+    }
+
+    .modalCart_wrapImage{
+        position: absolute;
+        top: 0;
+        left: 221px;
+    }
+}
+
+@media all and (max-width:730px){
+    .modalCart_wrap{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .modalCart_imageItem{
+        width: 221px;
+        margin: 0 auto;
+    }
+
+    .modalCart_wrapImage{
+        width: fit-content;
+        top: 35px;
+        left: auto;
+        right: 18px;
+    }
+}

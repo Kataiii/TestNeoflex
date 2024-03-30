@@ -22,3 +22,9 @@
     top: 60px;
     width: 100%;
 }
+
+@media all and (max-width:890px){
+    .cartInfo_wrap{
+        width: 100%;
+    }
+}

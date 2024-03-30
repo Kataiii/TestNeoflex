@@ -10,7 +10,7 @@ import { useContext, useRef, useState } from "react";
 import styles from "./css/ModalCartItem.module.css";
 import Favourite from "./Favourite";
 import Close from "../assets/icons/close.svg";
-import { fn } from "../utils/constants";
+import { fn, PAYMENT_PATH } from "../utils/constants";
 import { useOutsideClick } from "../utils/hooks/UseOutsideClick";
 import { CART_PATH } from "../utils/constants";
 import { runInAction } from "mobx";
@@ -64,7 +64,7 @@ const ModalCartItem: React.FC = observer(() => {
     const buyNowHandler = () => {
         if(inCart)
         {
-            navigate(CART_PATH);
+            navigate(PAYMENT_PATH);
         }
         else 
         {
@@ -85,7 +85,7 @@ const ModalCartItem: React.FC = observer(() => {
     return(
         <div ref={ref} className={styles.modalCart_wrap}>
             <img className={styles.modalCart_close} src={Close} alt="закрыть" onClick={closeHandler}/>
-            <img src={require(`../assets/images/${item?.img}`)} alt={item?.title} />
+            <img className={styles.modalCart_imageItem} src={require(`../assets/images/${item?.img}`)} alt={item?.title} />
             <div className={styles.modalCart_wrapInfo}>
                 <h2 className={styles.modalCart_title}>{item?.title}</h2>
                 <div className={styles.modalCart_wrapRating}>

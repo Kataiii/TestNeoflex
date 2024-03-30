@@ -6,8 +6,9 @@ import CatalogPage from "../pages/CatalogPage";
 import ContactsPage from "../pages/ContactsPage";
 import ErrorPage from "../pages/ErrorPage";
 import FavouritesPage from "../pages/FavouritesPage";
+import PaymentPage from "../pages/PaymentPage";
 import ShopCartPage from "../pages/ShopCartPage";
-import { CART_PATH, CONTACTS_PATH, FAVOURITES_PATH, HOME_PATH, ITEM_DETAILS } from "../utils/constants";
+import { CART_PATH, CONTACTS_PATH, FAVOURITES_PATH, HOME_PATH, ITEM_DETAILS, PAYMENT_PATH } from "../utils/constants";
 
 const Router: React.FC = () => {
     const location = useLocation();
@@ -21,6 +22,7 @@ const Router: React.FC = () => {
                     <Route path={CART_PATH} element={<ShopCartPage/>}/>
                     <Route path={FAVOURITES_PATH} element={<FavouritesPage/>}/>
                     <Route path={CONTACTS_PATH} element={<ContactsPage/>}/>
+                    <Route path={PAYMENT_PATH} element={<PaymentPage/>}/>
                     <Route path="*" element={<ErrorPage/>}/>
                 </Route>
             </Routes>

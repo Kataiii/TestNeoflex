@@ -16,3 +16,18 @@
     flex-direction: column;
     gap: 28px;
 }
+
+@media all and (max-width:1460px){
+    .cart_wrap{
+        gap: 40px;
+    }
+}
+
+@media all and (max-width:890px){
+    .cart_wrap{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 30px;
+    }
+}

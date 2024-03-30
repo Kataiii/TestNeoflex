@@ -21,3 +21,27 @@
 .footer_gapLang{
     gap: 35px;
 }
+
+@media all and (max-width:760px){
+    .footer_wrap{
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        height: fit-content;
+    }
+
+    .footer_gapLang{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 35px;
+    }
+}
+
+@media all and (max-width:450px){
+    .footer_gapLang{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}

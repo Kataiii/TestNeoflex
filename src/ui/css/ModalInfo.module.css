@@ -18,8 +18,21 @@
     font-size: 15px;
     font-weight: 500;
     color: #AAAAAA;
+    text-align: center;
 }
 
 .cartList_wrapButton{
     width: 30%;
+}
+
+@media all and (max-width:940px){
+    .cartList_wrapButton{
+        width: 50%;
+    }
+}
+
+@media all and (max-width:500px){
+    .cartList_wrapButton{
+        width: 80%;
+    }
 }
