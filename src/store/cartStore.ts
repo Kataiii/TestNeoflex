@@ -4,6 +4,7 @@ import { makeAutoObservable } from "mobx";
 
 class CartStore{
     private items: ItemCart[] = [];
+    private cost: number = 0;
 
     constructor(){
         makeAutoObservable(this);
@@ -15,6 +16,14 @@ class CartStore{
 
     setItems = (items: ItemCart[]) => {
         this.items = items;
+    }
+
+    getCost = (): number => {
+        return this.cost;
+    }
+
+    setCost = (cost: number) => {
+        this.cost = cost;
     }
 }
 

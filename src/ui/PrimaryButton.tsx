@@ -3,6 +3,7 @@ import styles from "./css/PrimaryButton.module.css";
 interface PrimaryButtonProps{
     content: string;
     onClick: () => void;
+    
 }
 
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({content, onClick}) => {

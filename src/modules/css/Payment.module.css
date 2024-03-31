@@ -1,0 +1,164 @@
+.payment_wrap{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.payment_content{
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 600;
+    color: #AAAAAA;
+    margin: 0;
+}
+
+.payment_wrapBlock{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payment_wrapInputs{
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+#payment_wrapName{
+    width: 40%;
+    position: relative;
+}
+
+#payment_wrapPhone{
+    width: 30%;
+    position: relative;
+}
+
+#payment_wrapCity{
+    width: 30%;
+    position: relative;
+}
+
+#payment_wrapStreet{
+    width: 20%;
+    position: relative;
+}
+
+#payment_wrapHouse{
+    width: 15%;
+    position: relative;
+}
+
+#payment_wrapFlat{
+    width: 10%;
+    position: relative;
+}
+
+.payment_wrapButton{
+    width: 30%;
+    margin: 0 auto;
+}
+
+.payment_buttonPay{
+    cursor: pointer;
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 700;
+    color: #101010;
+    border: none;
+    background-color: #10101000;
+    padding: 15px 20px;
+    border-radius: 20px;
+}
+
+.payment_buttonPay:hover{
+    background-color: #e2dfdf;
+}
+
+.payment_buttonPay:active{
+    background-color: #cfcece;
+}
+
+.payment_buttonPayActive{
+    color: #FFA542;
+}
+
+.payment_wrapError{
+    position: absolute;
+    top: 22px;
+    left: 60%;
+    z-index: 10;
+}
+
+@media all and (max-width:1340px){
+    .payment_wrapInputs{
+        flex-direction: column;
+    }
+
+    #payment_wrapName{
+        width: 70%;
+    }
+    
+    #payment_wrapPhone{
+        width: 70%;
+    }
+    
+    #payment_wrapCity{
+        width: 70%;
+    }
+    
+    #payment_wrapStreet{
+        width: 70%;
+    }
+    
+    #payment_wrapHouse{
+        width: 70%;
+    }
+    
+    #payment_wrapFlat{
+        width: 70%;
+    }
+    
+    .payment_wrapButton{
+        width: 70%;
+    }
+
+    .payment_buttonPay{
+        width: 30%;
+    }
+}
+
+@media all and (max-width:700px){
+    #payment_wrapName{
+        width: 100%;
+    }
+    
+    #payment_wrapPhone{
+        width: 100%;
+    }
+    
+    #payment_wrapCity{
+        width: 100%;
+    }
+    
+    #payment_wrapStreet{
+        width: 100%;
+    }
+    
+    #payment_wrapHouse{
+        width: 100%;
+    }
+    
+    #payment_wrapFlat{
+        width: 100%;
+    }
+    
+    .payment_wrapButton{
+        width: 100%;
+    }
+
+    .payment_buttonPay{
+        width: 100%;
+    }
+}

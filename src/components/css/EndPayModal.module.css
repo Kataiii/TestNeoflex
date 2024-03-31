@@ -1,0 +1,41 @@
+.modal_wrap {
+    width: 40%;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    padding: 50px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal_img{
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.modal_content{
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-weight: 600;
+    color: #1C1C27;
+    text-align: center;
+    margin: 0;
+}
+
+.modal_wrapButton{
+    width: 50%;
+    margin: 0 auto;
+}
+
+@media all and (max-width:800px){
+    .modal_wrap{
+        width: 90%;
+    }
+}
+
+@media all and (max-width:400px){
+    .modal_wrapButton{
+        width: 90%;
+    }
+}

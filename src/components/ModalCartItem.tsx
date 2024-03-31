@@ -100,7 +100,7 @@ const ModalCartItem: React.FC = observer(() => {
                 
                 <div className={styles.modalCart_wrapButtons}>
                     <div className={styles.modalCart_wrapBtns}>
-                        <Button content={ inCart ? "Перейти в корзину" : "Добавить в корзину"} onCLick={addCartHandler}/>
+                        <Button isDisable={false} content={ inCart ? "Перейти в корзину" : "Добавить в корзину"} onCLick={addCartHandler}/>
                         <PrimaryButton content={inCart ? "Перейти к оплате" : "Купить сейчас"} onClick={buyNowHandler}/>
                     </div>
                     <div className={styles.modalCart_wrapImage}>

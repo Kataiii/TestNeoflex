@@ -14,7 +14,7 @@ const ModalInfo: React.FC<ModalInfoProps> = ({title, content, buttonContent,  bu
             <p className={styles.cartList_title}>{title}</p>
             <p className={styles.cartList_content}>{content}</p>
             <div className={styles.cartList_wrapButton}>
-                <Button content={buttonContent} onCLick={buttonClick} />
+                <Button isDisable={false} content={buttonContent} onCLick={buttonClick} />
             </div>
         </div>
     )

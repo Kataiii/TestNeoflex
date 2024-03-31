@@ -50,3 +50,8 @@
 .iconButton_image:hover{
     opacity: 1;
 }
+
+.button:disabled{
+    background: #646464;
+    cursor: default;
+}

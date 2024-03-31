@@ -1,0 +1,11 @@
+.input{
+    width: 95%;
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 500;
+    color: #1C1C27;
+    outline: none;
+    padding: 10px 0 10px 20px;
+    border-radius: 23px;
+    border: 1px solid #1C1C27;
+}
